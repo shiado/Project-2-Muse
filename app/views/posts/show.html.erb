@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+<br>
 <%= @post.title %>
-<%= @post.content %>
+
 
 <br>
 <!-- <%= image_tag(@post.image.url(:medium)) %> -->
@@ -8,30 +12,38 @@
   <div class="panel-heading">Panel with panel-default class</div>
   <div class="panel-body"><%= @post.content %></div>
 </div> -->
-    <div class="container">
-        <div class="row">
-          <div class="carousel-caption">
-            <h3><%= @post.content %></h3>
-          </div>
 
-                <img src="http://www.w3schools.com/bootstrap/cinqueterre.jpg" class="img-circle">
+        <div class="container col-sm-12">
+          <div class="content thumbnail text-center col-sm-12">
+             <h3><%= @post.content %></h3>
 
+          <!-- <img src="http://cliparts.co/cliparts/ki8/nKa/ki8nKaEdT.png" class="img-circle"> -->
+        </div>
+        <!-- <div class = "caption">
 
-     </div>
+     </div> -->
 
     </div>
 
 
+
   <br>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+
 <style>
-img {
-  width:400px;
-  height:400px;
+
+.thumbnail{
+  background-image: url("http://cliparts.co/cliparts/ki8/nKa/ki8nKaEdT.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  /*height: 80%;*/
+  margin: 0 auto;
+  padding: 10% 25% 17% 25% ;
 }
-.carousel-caption {
-    top: 40px;
-    bottom: auto;
-}
+/*
+.caption {
+  width:60%;
+  margin: 20%;
+
+}*/
 </style>

@@ -5,9 +5,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.where(user_id: current_user.id)
   end
 
+  def index_all
+    @posts = Post.all
+  end
   # GET /posts/1
   # GET /posts/1.json
   def show

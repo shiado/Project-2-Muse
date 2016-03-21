@@ -18,9 +18,11 @@
   <!-- <br>
   <%= image_tag post.image.url(:medium) %>
   <br> -->
-  <div class="col-sm-6 col-md-4">
+  <div class="col-sm-6 col-md-4" style="min-height:50px;">
     <div class="thumbnail">
-  <%= image_tag post.image.url(:medium) %>
+      <p><%= post.content %></p>
+    </div>
+  <!-- <%= image_tag post.image.url(:medium) %> -->
 
   <%= link_to like_post_path(post), class:"like", method: :put do %>
   <button type="button" class="btn btn-info" aria-label="Left Align">
@@ -42,7 +44,7 @@
   <%= link_to 'Show', post %>
   <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
-  </div>
+
 </div>
 
       <!-- <tr>
@@ -56,3 +58,17 @@
 </table>
 
 <br>
+<style>
+.thumbnail{
+  background-image: url("http://cliparts.co/cliparts/ki8/nKa/ki8nKaEdT.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 400px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: 16% 25% 18% 25% ;
+}
+
+</style>
