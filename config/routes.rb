@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root "pages#show", page: "home"
+  root "posts#index_all"
+
+  # root "pages#show", page: "home"
   # root "posts#index"
   resources :posts do
     member do
@@ -9,11 +11,22 @@ Rails.application.routes.draw do
 
     end
 end
+
+#for devise
   devise_for :users
 
+#for muse allposts routes
+  get 'allposts', to: 'posts#index_all'
+
+
+
+# for homepage
   Rails.application.routes.draw do
-  get "/pages/:page" => "pages#show"
+  get "/:page" => "pages#show"
 end
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

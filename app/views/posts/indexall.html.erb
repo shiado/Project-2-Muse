@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
-<%- if user_signed_in? %>
+<h1>ALL POSTS FROM ALL USERS</h1>
+<!-- <%- if user_signed_in? %>
 <%= link_to 'New Post', new_post_path %>
-<% end%>
+<% end%> -->
 <br>
 
 <table>
@@ -24,7 +24,6 @@
     </div>
   <!-- <%= image_tag post.image.url(:medium) %> -->
 
-  <div class= "votewrap">
   <%= link_to like_post_path(post), class:"like", method: :put do %>
   <button type="button" class="btn btn-info" aria-label="Left Align">
     <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
@@ -45,7 +44,7 @@
   <%= link_to 'Show', post %>
   <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
-</div>
+
 </div>
 
       <!-- <tr>
@@ -61,28 +60,15 @@
 <br>
 <style>
 .thumbnail{
-  background-image: url("/images/bubbles.png");
+  background-image: url("http://cliparts.co/cliparts/ki8/nKa/ki8nKaEdT.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 350px;
+  height: 400px;
   display: table-cell;
   text-align: center;
   vertical-align: middle;
   margin: 0 auto;
   padding: 16% 25% 18% 25% ;
 }
-
-
-.votewrap{
-  float: right
-}
-
-.btn-info {
-  border: 1px solid #AEB5B5;
-  color: #AEB5B5;
-  background: none;
-   padding: 2px 2px;
-}
-
 
 </style>

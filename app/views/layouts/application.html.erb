@@ -21,10 +21,10 @@
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                       <span class="sr-only">Toggle navigation</span>
                       <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
+                      <!-- <span class="icon-bar"></span>
+                      <span class="icon-bar"></span> -->
                   </button>
-                  <%= link_to "Muse", posts_path, class: "navbar-brand" %>
+                  <%= link_to "Muse", allposts_path, class: "navbar-brand" %>
               </div>
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -33,6 +33,9 @@
                       <%- if current_user %>
                       <li>
                         <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                      </li>
+                      <li>
+                        <%= link_to current_user.username, posts_path %>
                       </li>
                       <% else %>
                       <li>
