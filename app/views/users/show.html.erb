@@ -1,0 +1,174 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <br>
+  <div class = "row">
+  <div class= "col-lg-4">
+    <div class= "media">
+      <a class="pull-left" href="#">
+        <%= image_tag @user.avatar.url(:medium), class: "avatar" %>
+      </a>
+  <div class="media-body">
+  <p class="username">
+   <%= @user.username %>
+ </p>
+ <h4>
+   <%= @user.usertag %>
+ </h4>
+ <hr style = "margin:8px auto">
+ <span class="btn btn-info vote"><%= link_to "Edit Profile", edit_user_registration_path %>
+ </span>
+ <span class="btn btn-info vote">
+   <%- if user_signed_in? %>
+   <%= link_to 'New Post', new_post_path %>
+   <% end%>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+
+    <% @posts.each do |post| %>
+  <!-- <br>
+  <%= image_tag post.image.url(:medium) %>
+  <br> -->
+
+  <div class="col-sm-6 col-md-4 post" style="min-height:50px;">
+    <div class="thumbnail">
+      <p class = "postcontent"><%= post.content %></p>
+    </div>
+
+
+  <!-- <div class= "votewrap"> -->
+
+    <%- if user_signed_in? %>
+    <!-- <%= link_to 'Edit', edit_post_path(post) %> -->
+
+    <%= link_to 'Show', post, class:"btn btn-info pull-left show" %>
+
+    <!-- <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+
+  <%= link_to like_post_path(post), class:"like", method: :put do %>
+  <button type="button" class="btn btn-info vote" aria-label="Left Align">
+    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+    <span class="badge"><%= post.get_upvotes.size%></span>
+  </button>
+  <% end %>
+
+  <%= link_to unlike_post_path(post), class:"like", method: :put do %>
+  <button type="button" class="btn btn-info vote" aria-label="Left Align">
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    <span class="badge"><%= post.get_downvotes.size%></span>
+  </button>
+  <% end %>
+
+  <br>
+
+
+</div>
+
+</div>
+<% end %>
+
+      <!-- <tr>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr> -->
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+
+<style>
+
+
+@import url(https://fonts.googleapis.com/css?family=Handlee);
+
+
+.postcontent{
+font-family: 'Handlee', cursive;
+  font-size: 20px;
+  color: #00b3e3;
+}
+
+.post{
+margin-bottom: 20px;
+}
+
+.background{
+  background-color: #00b3e3;
+
+}
+
+.show{
+  float:left;
+   padding: 2px 7px;
+}
+
+.thumbnail{
+  background-image: url("/images/bubbles.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 330px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: 16% 25% 18% 25% ;
+  background-color: #fafafa;
+  border-color:  #fafafa;
+}
+
+
+.votewrap{
+  float: right
+}
+
+.vote{
+  border: 1px solid #AEB5B5;
+  color: #AEB5B5;
+  background: none;
+   padding: 2px 2px;
+}
+
+.avatar {
+border: 1px solid #d9d9d9 ;
+border-radius: 50%;
+}
+
+.username{
+  color: #4b4f54;
+  font-weight: 300;
+  font-size: 22px;
+  font-weight: 300;
+
+}
+
+.row{
+  padding-bottom: 100px;
+
+}
+
+</style>

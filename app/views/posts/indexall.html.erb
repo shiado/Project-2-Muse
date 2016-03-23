@@ -31,7 +31,7 @@
 
 <div class="bottomcontainer">
 
-  <a class="pull-left col-md-3" href="#">
+  <a class="pull-left col-md-3" href="/users/<%= post.user.id %>">
     <% if !post.user.avatar_file_name.blank? then %>
       <%= image_tag post.user.avatar.url(:thumb), class: "avatar" %>
         <% end %>

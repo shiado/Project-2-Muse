@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     end
 end
 
+resources :users, only: :show
+
+
+
 #for devise
   devise_for :users
   # devise_for :users, controllers: {
@@ -27,9 +31,7 @@ end
   get "/:page" => "pages#show"
 end
 
-#to view other users Profile
 
-get 'users/:id' => 'users#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
