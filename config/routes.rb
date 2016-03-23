@@ -27,6 +27,9 @@ end
   get "/:page" => "pages#show"
 end
 
+#to view other users Profile
+
+get 'users/:id' => 'users#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

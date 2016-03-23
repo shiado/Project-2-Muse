@@ -49,9 +49,9 @@
   <%= image_tag post.image.url(:medium) %>
   <br> -->
 
-  <div class="col-sm-6 col-md-4" style="min-height:50px;">
+  <div class="col-sm-6 col-md-4 post" style="min-height:50px;">
     <div class="thumbnail">
-      <p><%= post.content %></p>
+      <p class = "postcontent"><%= post.content %></p>
     </div>
 
 
@@ -103,7 +103,21 @@
 
 <style>
 
-.backgrounsd{
+
+@import url(https://fonts.googleapis.com/css?family=Handlee);
+
+
+.postcontent{
+font-family: 'Handlee', cursive;
+  font-size: 20px;
+  color: #00b3e3;
+}
+
+.post{
+margin-bottom: 20px;
+}
+
+.background{
   background-color: #00b3e3;
 
 }
