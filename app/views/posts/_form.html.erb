@@ -14,21 +14,41 @@
     </div>
   <% end %>
 
-  <div class="actions">
+  <!-- <div class="actions"> -->
   <!-- <div>
     <%= f.label :image %>
     <%= f.file_field :image %>
   </div> -->
 
-  <div>
-    <%= f.label :title %>
-    <%= f.text_area :title %>
+  <div class="form-group">
+    <!-- <%= f.label :title, class:"control-label" %> -->
+    <%= f.text_area :title,  class: "form-control", placeholder:"Title" %>
   </div>
-  <div>
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+  <div class ="form-group">
+    <!-- <%= f.label :content, class:"control-label" %> -->
+    <%= f.text_area :content, class: "form-control", rows: "5", placeholder: "Thoughts"%>
   </div>
-  <div>
+  <div class="btn btn-default update-button">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+<style>
+
+.update-button{
+
+  float:left;
+  background: white;
+  outline: none;
+  border: none;
+  transition: all .4s ease-in-out;
+  cursor: pointer;
+  color: $dark;
+  &:hover {
+      background: $dark;
+      color: white;
+}
+
+
+</style>

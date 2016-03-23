@@ -1,13 +1,10 @@
 
-  <!-- <div class="row">
-      <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
-      <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
 
-    </div> -->
-    <div class="row">
+    <!-- </div> --> -->
+    <!-- <div class="row">
         <div id="left-panel" class=" panel col-md-7 no-float" style="background-color:#005B8D;">
 
-        <div id="logohomepage">
+        <div class= "col-md-6 col-md-offset-3" id="logohomepage">
           <img src="/images/muselogo.png" >
       </div>
     </div>
@@ -16,16 +13,58 @@
 
 
     </div>
+  </div> -->
+
+  <!-- <div class= "col-md-6 col-md-offset-3 logo" id="logohomepage"> -->
+<div class="container">
+  <div class= "logo" >
+    <img src="/images/muselogo.png" >
+  </div>
+  <div class = "start">
+  <div class="page-scroll btn btn-xl">
+    <%= link_to "Login", new_user_session_path %></div>
+</div>
+</div>
 
 
 <style>
-img {
-  /*display: table-cell;*/
-  /*text-align: center;*/
-  vertical-align: middle;
-  /*margin: 0 auto;*/
-  width: 350px;
-  height: 280px:
-  padding: 25% 25% 18% 25% ;
+
+body { background-color:#005B8D }
+
+.btn-xl {
+    color: white;
+    background-color: #fed136;
+    border-color: #fed136;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 10px 30px;
+
 }
+
+.start{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.logo{
+
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-top: 130px;
+}
+
+img {
+
+  width: 350px;
+  height: 300px;
+
+
+}
+
 </style>

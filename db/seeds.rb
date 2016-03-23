@@ -50,20 +50,23 @@ end
   {
     email:"shiado@email.com",
     username:"shiado",
+    usertag: "I live in my head",
     password:"password1",
     password_confirmation:"password1",
-
-
   },
+
   { email:"user2@email.com",
     username:"user2",
+    usertag: "Please like me",
     password:"password2",
     password_confirmation:"password2",
 
   },
+
   {
     email:"user3@email.com",
     username:"user3",
+    usertag: "I am shy",
     password:"password3",
     password_confirmation:"password3",
   },

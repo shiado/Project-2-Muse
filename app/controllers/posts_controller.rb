@@ -6,10 +6,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.where(user_id: current_user.id)
+    # @posts = Post.all
   end
 
   def index_all
     @posts = Post.all
+    @user = User.second
     render :indexall
   end
   # GET /posts/1
@@ -31,6 +33,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(permit_post)
 
+    @post.user_id = current_user.id
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -73,7 +76,7 @@ class PostsController < ApplicationController
 
   def downvote
   @post.downvote_from current_user
-  redirect_to posts_path
+  redirect_to :back
   end
 
 
@@ -85,7 +88,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def permit_post
-      params.require(:post).permit(:image,:title, :content)
+      params.require(:post).permit(:image,:title, :content,)
     end
 
     # def post_params

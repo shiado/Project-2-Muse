@@ -14,7 +14,9 @@ end
 
 #for devise
   devise_for :users
-
+  # devise_for :users, controllers: {
+  #         sessions: 'users/sessions'
+  #       }
 #for muse allposts routes
   get 'allposts', to: 'posts#index_all'
 

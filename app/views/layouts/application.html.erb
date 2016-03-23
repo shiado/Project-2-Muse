@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>RandomThoughts</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,20 +15,20 @@
 <body>
 
       <!-- Navigation -->
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container">
               <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header">
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
+                      <!-- <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span> -->
                       <!-- <span class="icon-bar"></span>
                       <span class="icon-bar"></span> -->
                   </button>
-                  <%= link_to "Muse", allposts_path, class: "navbar-brand" %>
+                  <%= link_to image_tag("navicon2.png"), allposts_path, class: "navbar-brand" %>
               </div>
               <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <div class="navbar-text navbar-right" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
 
                       <%- if current_user %>
@@ -51,12 +52,13 @@
           </div>
           <!-- /.container -->
       </nav>
-
+    <div class="contentcontainer">
       <!-- Page Content -->
       <div class="container">
 
           <div class="row">
               <div class="col-lg-12 text-center">
+
                   <%= yield %>
                   <!-- <h1>A Bootstrap Starter Template</h1>
                   <p class="lead">Complete with pre-defined file paths that you won't have to change!</p>
@@ -64,16 +66,37 @@
                       <li>Bootstrap v3.3.6</li>
                       <li>jQuery v1.11.1</li>
                   </ul> -->
+
               </div>
+
           </div>
           <!-- /.row -->
 
       </div>
 
-
+  </div>
 
 
 
 
 </body>
 </html>
+
+<style>
+
+.navbar{
+  background-color: white;
+
+}
+
+
+body{
+  background-color:#fafafa
+}
+
+
+</style>
+</script>
+<script>
+// $('.contentcontainer').css({'background-image': "url('/images/sky.jpg')", "opacity": "1"});
+</script>

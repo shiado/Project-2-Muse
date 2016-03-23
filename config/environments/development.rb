@@ -40,4 +40,19 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   Paperclip.options[:command_path] = "/usr/local/bin/"
+
+  config.paperclip_defaults = {
+  :storage => :fog,
+  :fog_directory => 'melissa-paperclip',
+  :fog_credentials => {
+    :provider => 'AWS',
+    :region => 'ap-southeast-1',
+    :scheme => 'http',
+    :aws_access_key_id => ENV['aws_key'],
+    :aws_secret_access_key => ENV['aws_secret']
+  }
+}
+
+
+
 end

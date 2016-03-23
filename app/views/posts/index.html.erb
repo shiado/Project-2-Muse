@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
-<%- if user_signed_in? %>
-<%= link_to 'New Post', new_post_path %>
-<% end%>
+
+
 <br>
 
 <table>
@@ -14,39 +12,79 @@
   </thead>
 
   <tbody>
+
+    <br>
+  <div class = "row">
+  <div class= "col-lg-4">
+    <div class= "media">
+      <a class="pull-left" href="#">
+        <%= image_tag current_user.avatar.url(:medium), class: "avatar" %>
+      </a>
+  <div class="media-body">
+  <p class="username">
+   <%= current_user.username %>
+ </p>
+ <h4>
+   <%= current_user.usertag %>
+ </h4>
+ <hr style = "margin:8px auto">
+ <span class="btn btn-info vote"><%= link_to "Edit Profile", edit_user_registration_path %>
+ </span>
+ <span class="btn btn-info vote">
+   <%- if user_signed_in? %>
+   <%= link_to 'New Post', new_post_path %>
+   <% end%>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+
     <% @posts.each do |post| %>
   <!-- <br>
   <%= image_tag post.image.url(:medium) %>
   <br> -->
+
   <div class="col-sm-6 col-md-4" style="min-height:50px;">
     <div class="thumbnail">
       <p><%= post.content %></p>
     </div>
-  <!-- <%= image_tag post.image.url(:medium) %> -->
 
-  <div class= "votewrap">
+
+  <!-- <div class= "votewrap"> -->
+
+    <%- if user_signed_in? %>
+    <!-- <%= link_to 'Edit', edit_post_path(post) %> -->
+
+    <%= link_to 'Show', post, class:"btn btn-info pull-left show" %>
+
+    <!-- <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+
   <%= link_to like_post_path(post), class:"like", method: :put do %>
-  <button type="button" class="btn btn-info" aria-label="Left Align">
+  <button type="button" class="btn btn-info vote" aria-label="Left Align">
     <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
     <span class="badge"><%= post.get_upvotes.size%></span>
   </button>
   <% end %>
 
   <%= link_to unlike_post_path(post), class:"like", method: :put do %>
-  <button type="button" class="btn btn-info" aria-label="Left Align">
+  <button type="button" class="btn btn-info vote" aria-label="Left Align">
     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
     <span class="badge"><%= post.get_downvotes.size%></span>
   </button>
   <% end %>
 
   <br>
-  <%- if user_signed_in? %>
-  <%= link_to 'Edit', edit_post_path(post) %>
-  <%= link_to 'Show', post %>
-  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+</div>
+
+</div>
 <% end %>
-</div>
-</div>
 
       <!-- <tr>
         <td><%= link_to 'Show', post %></td>
@@ -59,17 +97,34 @@
 </table>
 
 <br>
+
+
+
+
 <style>
+
+.backgrounsd{
+  background-color: #00b3e3;
+
+}
+
+.show{
+  float:left;
+   padding: 2px 7px;
+}
+
 .thumbnail{
   background-image: url("/images/bubbles.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 350px;
+  height: 330px;
   display: table-cell;
   text-align: center;
   vertical-align: middle;
   margin: 0 auto;
   padding: 16% 25% 18% 25% ;
+  background-color: #fafafa;
+  border-color:  #fafafa;
 }
 
 
@@ -77,12 +132,29 @@
   float: right
 }
 
-.btn-info {
+.vote{
   border: 1px solid #AEB5B5;
   color: #AEB5B5;
   background: none;
    padding: 2px 2px;
 }
 
+.avatar {
+border: 1px solid #d9d9d9 ;
+border-radius: 50%;
+}
+
+.username{
+  color: #4b4f54;
+  font-weight: 300;
+  font-size: 22px;
+  font-weight: 300;
+
+}
+
+.row{
+  padding-bottom: 100px;
+
+}
 
 </style>
