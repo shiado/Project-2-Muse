@@ -30,13 +30,12 @@
   <!-- <%= image_tag post.image.url(:medium) %> -->
 
 <div class="bottomcontainer">
-
-  <a class="pull-left col-md-3" href="/users/<%= post.user.id %>">
+<a class="pull-left col-md-3">
+  <!-- <a class="pull-left col-md-3" href="/users/<%= post.user.id %>"> -->
     <% if !post.user.avatar_file_name.blank? then %>
       <%= image_tag post.user.avatar.url(:thumb), class: "avatar" %>
-        <% end %>
-        <!-- <%= link_to post.user.username, posts_path %> -->
          <%= post.user.username %>
+         <% end %>
     </div>
 
     </a>
@@ -139,10 +138,10 @@ body{
     background-image: url("/images/sky.jpg");
 
 }
-
+/*
 .backgroundimage{
     background-image: url("/images/sky.jpg");
-    /*background-size: cover;*/
+
     display: block;
     filter:blur(10px);
     -webkit-filter: blur(10px);
@@ -153,12 +152,15 @@ body{
     z-index: 1;
     top: -10px;
 
-}
+}*/
 
-.content{
+/*.content{
     z-index: 2;
-}
+}*/
 
+.pull-left{
+  color: white;
+}
 
 .username {
   background-color: red;
@@ -188,7 +190,7 @@ $downVoteButtons.click(function(){
   }
   if ($downVote > 1) {
     console.log('2 or more votes');
-    $('div.thumbnail').fadeTo("slow",0.5,function(){});
+    $('div.thumbnail').fadeTo("slow",0,function(){});
   }
 })
 </script>

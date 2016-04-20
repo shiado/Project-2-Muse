@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
 end
 
-resources :users, only: :show
+# resources :users, only: :show
 
 
 
@@ -31,7 +31,11 @@ resources :users, only: :show
   get "/:page" => "pages#show"
 end
 
-
+# Rails.application.routes.draw do
+# get "/:user/:id" => "users#show"
+# end
+#
+# get 'users', to: 'posts#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
