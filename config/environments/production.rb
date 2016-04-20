@@ -88,5 +88,8 @@ Rails.application.configure do
   }
 }
 
+#config/environments/production.rb
+config.serve_static_assets = true
+config.assets.compile = true
 
 end
