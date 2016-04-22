@@ -7,38 +7,38 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 [
   {
-    title: "Post 1.1",
-    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has ",
+    title: "How to be a millionaire",
+    content: "If I charge my student 1 dollar for every mistake made, I might be rich!",
     user_id: 1,
 
   },
   {
-    title: "Post 1.2",
-    content: "Shiado2. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has ",
+    title: "Buildings",
+    content: "Why are buildings called buildings if they are already built?",
     user_id: 1,
 
   },
   {
-    title: "Post 1.3",
-    content: "Shiado3. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has ",
+    title: "Jeremiah's famous quote",
+    content: "Generalisation is a form of specialisation",
     user_id: 1,
 
   },
   {
-    title: "Post 1.4",
-    content: "Shiado4. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has ",
-    user_id: 1,
-
-  },
-  {
-    title: "Post 2",
-    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has ",
+    title: "Naturalism",
+    content: "Being natural is not a statement, it is the closest I can get to being myself",
     user_id: 2,
 
   },
   {
-    title: "Post 3",
-    content: "Lorem Ipsum is simply dummy text of the printing and typesetting",
+    title: "Tinder Musings",
+    content: "I wish that Tinder has a scheduler so that I can manage my dates with all the girls",
+    user_id: 2,
+
+  },
+  {
+    title: "Extrovert",
+    content: "I'm a real extrovert but when I am around someone new, I am super shy",
     user_id: 3,
 
   },
@@ -53,22 +53,25 @@ end
     usertag: "I live in my head",
     password:"password1",
     password_confirmation:"password1",
+    avatar_file_name:"shiado.jpg",
   },
 
   { email:"user2@email.com",
-    username:"user2",
-    usertag: "Please like me",
+    username:"Hakim",
+    usertag: "Swipe Right",
     password:"password2",
     password_confirmation:"password2",
+    avatar_file_name:"user2.jpg",
 
   },
 
   {
     email:"user3@email.com",
-    username:"user3",
+    username:"Shyboy87",
     usertag: "I am shy",
     password:"password3",
     password_confirmation:"password3",
+    avatar_file_name:"user3.jpg",
   },
 ].each do |user|
   User.create(user)
